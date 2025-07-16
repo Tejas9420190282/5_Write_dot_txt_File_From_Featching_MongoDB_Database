@@ -9,6 +9,11 @@ const app = express();
 
 const PORT = 7878;
 
+app.use(express.json());
+
+app.use(express.urlencoded({extended: true}));
+
+
 const startServer = async () => {
     try {
         await connectDB();
