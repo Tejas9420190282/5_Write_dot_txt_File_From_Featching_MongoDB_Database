@@ -1,0 +1,50 @@
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build output
+dist/
+build/
+
+# Coverage directory used by testing tools
+coverage/
+
+# IDE & Editor folders
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# React-specific
+# Ignore node_modules inside client (React)
+client/node_modules/
+client/build/
+
+# Next.js (if using)
+.next/
+
+# Optional: ignore database exports or backups
+*.sqlite
+*.sql
+dump.rdb
+
+# Optional: ignore user-generated files
+userData.txt
