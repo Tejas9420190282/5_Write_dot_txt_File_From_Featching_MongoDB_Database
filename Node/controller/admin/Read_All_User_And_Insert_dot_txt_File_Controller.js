@@ -16,9 +16,32 @@ const Read_All_User_And_Insert_dot_txt_File_Controller = async (req, res) => {
         })
 
         // ✅ Convert array to string (with line breaks)
-        const userText = users.join("\n");
+        const userText = users.join("\n");      
+        /*  join ========>  - join() is a built-in JavaScript method for arrays.
+
+                            - It takes all items in an array and joins them together into one string.
+
+                            - "\n" means new line (like pressing Enter on your keyboard). 
+        */
 
         const filePath = path.join(__dirname, "../../allUsers.txt");
+        /*  path.join ======>   - path is a built-in Node.js module.
+
+                                - path.join() is used to build safe file paths across all systems (Windows, Linux, etc.).
+
+                                - '__dirname' gives you the current folder path of your file.
+
+                            🔍 Breakdown:
+                                -  __dirname = "C:/Users/Tejas/Desktop/Project/controllers"
+                            
+                                - path.join(__dirname, "../../allUser.txt")
+                                
+                                - This joins the path safely:
+
+                            C:/Users/Tejas/Desktop/Project/controllers + ../../allUser.txt 
+                            = C:/Users/Tejas/Desktop/Project/allUser.txt       
+        */
+
 
         // ✅ Use proper file path
         fs.writeFileSync(filePath, userText, "utf8");
