@@ -45,6 +45,16 @@ const Read_All_User_And_Insert_dot_txt_File_Controller = async (req, res) => {
 
         // ✅ Use proper file path
         fs.writeFileSync(filePath, userText, "utf8");
+        /*  =========>  - fs is Node's File System module.
+
+                        - writeFileSync() means: write data synchronously (i.e., block until done).
+
+                        - filePath → where to write the file.
+
+                        - userText → what data to write (string).
+
+                        - "utf8" → encoding type (always use "utf8" for readable text).
+        */
 
         console.log(`All users fetched & inserted into .txt successfully...`.bgYellow);
 
