@@ -8,6 +8,7 @@ const {
 } = require("./router/admin/register_Admin_Router");
 const { register_User_Router } = require("./router/user/register_User_Router");
 const { login_Router } = require("./router/login_Router");
+const { Read_All_User_And_Insert_dot_txt_File_Router } = require("./router/admin/Read_All_User_And_Insert_dot_txt_File_Router");
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.use(login_Router);
 
 // admin
 app.use(register_Admin_Router);
-
+app.use(Read_All_User_And_Insert_dot_txt_File_Router);
 // user
 app.use(register_User_Router);
 
