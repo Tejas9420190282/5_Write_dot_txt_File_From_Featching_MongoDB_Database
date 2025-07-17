@@ -6,6 +6,7 @@ const { connectDB } = require("./config/db");
 const {
     register_Admin_Router,
 } = require("./router/admin/register_Admin_Router");
+const { register_User_Router } = require("./router/user/register_User_Router");
 
 const app = express();
 
@@ -15,8 +16,12 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
+
 // admin
 app.use(register_Admin_Router);
+
+// user
+app.use(register_User_Router);
 
 const startServer = async () => {
     try {

@@ -3,7 +3,7 @@
 
 const { default: mongoose } = require("mongoose");
 
-const User_Schema = new mongoose.Schema({
+const user_schema = new mongoose.Schema({
     name : {
         type : String,
     },
@@ -22,7 +22,8 @@ const User_Schema = new mongoose.Schema({
     timestamps : true
 })
 
-const user_Scema = mongoose.model('User_Schema', User_Schema);
+const User_Scema = mongoose.model('User_Schema', user_schema);
 
-exports.user_Scema = user_Scema;
+exports.User_Scema = User_Scema;
+
 

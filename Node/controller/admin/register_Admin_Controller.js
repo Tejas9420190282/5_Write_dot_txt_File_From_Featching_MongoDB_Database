@@ -1,6 +1,7 @@
+
 // register_Admin_Controller.js
 
-const { admin_Scema } = require("../../model/Admin_Schema");
+const { Admin_Scema } = require("../../model/Admin_Schema");
 const bcrypt = require("bcrypt");
 
 const register_Admin_Controller = async (req, res) => {
@@ -10,18 +11,18 @@ const register_Admin_Controller = async (req, res) => {
         if (!email || !password || !name) {
             console.log(`All the inputs are mandatory...`.bgRed);
 
-            res.status(404).json({
+            return res.status(404).json({
                 success: false,
                 message: `All the inputs are mandatory...`,
             });
         }
 
-        const isAdminExist = await admin_Scema.findOne({ email });
+        const isAdminExist = await Admin_Scema.findOne({ email });
 
         if (isAdminExist) {
             console.log(`Admin aleady exist...`.bgRed);
 
-            res.status(404).json({
+            return res.status(404).json({
                 success: false,
                 message: `Admin aleady exist...`,
             });
@@ -29,7 +30,7 @@ const register_Admin_Controller = async (req, res) => {
 
         const hashPass = await bcrypt.hash(password, 10);
 
-        const newAdmin = await admin_Scema.create({
+        const newAdmin = await Admin_Scema.create({
             name: name,
             email: email,
             password: hashPass,
